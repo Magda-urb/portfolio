@@ -14,12 +14,13 @@
           Hello World
         </h1>
 
-        <img src="/vector.svg" alt="" class="hero-icon shrink-0" />
+        <img :src="vectorSrc" alt="" class="hero-icon shrink-0" loading="eager" />
       </div>
 
       <h2 class="relative z-10 font-exo text-1 text-hero-h2">
         I’m Magdalena, creative
       </h2>
+
       <div class="relative z-10 mt-4 flex font-console">
         <div class="flex items-baseline gap-4 text-hero-code font-bold leading-none">
           <span class="brace">&#123;&#123;</span>
@@ -27,13 +28,15 @@
           <span class="brace">&#125;&#125;</span>
         </div>
       </div>
+
       <div class="relative z-40 mt-8">
         <ButtonComponent label="Let's talk" icon="arrow_forward" variant="primary" to="contact" />
       </div>
+
       <div class="relative -mt-[7.25rem] z-30 flex justify-center">
         <div class="relative w-[520px] max-w-[85vw]">
           <div class="pointer-events-none absolute -inset-6 rounded-[48px] bg-black/25 blur-2xl" />
-          <img src="/me.png" alt="Portrait" class="relative h-auto object-contain" />
+          <img :src="meSrc" alt="Portrait" class="relative h-auto object-contain" loading="lazy" />
         </div>
       </div>
 
@@ -43,11 +46,8 @@
 </template>
 
 <script setup lang="ts">
-function scrollToContact() {
-  const el = document.getElementById("contact")
-  if (!el) return
-  const offset = 80
-  const top = el.getBoundingClientRect().top + window.pageYOffset - offset
-  window.scrollTo({ top, behavior: "smooth" })
-}
+import { withBase } from "ufo"
+
+const vectorSrc = withBase("/vector.svg")
+const meSrc = withBase("/me.png")
 </script>
