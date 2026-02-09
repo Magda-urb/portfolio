@@ -10,16 +10,11 @@
 
     <div class="hero-frame px-6 sm:px-10 lg:px-16 pt-28 md:pt-32">
       <div class="relative z-10 flex items-center gap-6">
-        <h1 class="font-console font-bold tracking-tight text-hero-h1">
-          Hello World
-        </h1>
-
+        <h1 class="font-console font-bold tracking-tight text-hero-h1">Hello World</h1>
         <img :src="vectorSrc" alt="" class="hero-icon shrink-0" loading="eager" />
       </div>
 
-      <h2 class="relative z-10 font-exo text-1 text-hero-h2">
-        I’m Magdalena, creative
-      </h2>
+      <h2 class="relative z-10 font-exo text-1 text-hero-h2">I’m Magdalena, creative</h2>
 
       <div class="relative z-10 mt-4 flex font-console">
         <div class="flex items-baseline gap-4 text-hero-code font-bold leading-none">
@@ -48,6 +43,8 @@
 <script setup lang="ts">
 import { withBase } from "ufo"
 
-const vectorSrc = withBase("/Vector.svg")
-const meSrc = withBase("/me.png")
+const base = useRuntimeConfig().app.baseURL || "/"
+
+const vectorSrc = withBase("/Vector.svg", base)
+const meSrc = withBase("/me.png", base)
 </script>
