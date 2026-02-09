@@ -1,7 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  nitro: {
-    preset: "github_pages",
+  nitro: { preset: "github_pages" },
+
+  app: {
+    baseURL: "/portfolio/",
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },

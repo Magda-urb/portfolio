@@ -25,10 +25,14 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
-      - run: npm run generate
+      - name: Install deps
+        run: npm ci
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Generate static site
+        run: npm run generate
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
@@ -37,7 +41,5 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
