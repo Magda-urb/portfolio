@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: "/portfolio/",
   },
+  css: ["~/assets/css/tailwind.css"],
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
