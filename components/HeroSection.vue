@@ -48,6 +48,6 @@
 <script setup lang="ts">
 import { withBase } from "ufo"
 
-const vectorSrc = withBase("/vector.svg")
+const vectorSrc = withBase("/Vector.svg")
 const meSrc = withBase("/me.png")
 </script>
