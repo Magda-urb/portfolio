@@ -118,7 +118,7 @@
                 <GIconComponent name="open_in_new" />
               </a>
 
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="quick-link">
+              <a href="./cv.pdf" target="_blank" rel="noopener noreferrer" class="quick-link">
                 <div class="quick-link__icon-wrap">
                   <svg class="quick-link__icon" viewBox="0 0 24 24" fill="none">
                     <path
